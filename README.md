@@ -12,6 +12,7 @@ I wrote this slide this afternoon in Cornell CIS lounge.
 ## Why SRL? Semantic Understanding!
 
 Performing SRL Task = Semantic Understanding
+
 Semantic understanding is cornerstone of:
 - machine translation
 - information extraction
