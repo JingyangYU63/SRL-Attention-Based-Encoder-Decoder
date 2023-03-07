@@ -66,6 +66,6 @@ matrix
 
 ## Attention-based Encoder Decoder
 
-<img width="938" alt="image" src="https://user-images.githubusercontent.com/73151841/223310374-81ed461d-b478-441b-92d3-7bfd5356eefc.png">
+<img width="939" alt="image" src="https://user-images.githubusercontent.com/73151841/223310456-f3c85168-c008-4882-ae66-e7a73735481f.png">
 
 Intuition: When labeling a sentence, we pay special attention to the word or phrase that we are labeling as well as other phrase worth an attention (e.g. predicate).
