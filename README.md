@@ -32,14 +32,15 @@ The notion of a locative is not restricted to physical locations, but abstract l
 ## Raw Text to Corpus
 
 Convert each example into 5 question-answer pairs:
+
 E.g., “I wrote this slide this afternoon in Cornell CIS lounge”
--> Input 1: wrote [SEPT] I wrote this slide this afternoon in Cornell CIS lounge. ARG0
--> Output 1:  <𝑠>  I  </𝑠> 
--> Input 2: wrote [SEPT] I wrote this slide this afternoon in Cornell CIS lounge. ARG1
--> Output 2:  <𝑠>  this slide  </𝑠>
--> Input 3: wrote [SEPT] I wrote this slide this afternoon in Cornell CIS lounge. ARG2
--> Output 3:  <𝑠>   </𝑠>  (Explanation: because there's no ARG2 in this sentence)
--> Input 4: wrote [SEPT] I wrote this slide this afternoon in Cornell CIS lounge. ARGM-TMP
--> Output 4:  <𝑠> this afternoon  </𝑠> 
--> Input 5: wrote [SEPT] I wrote this slide this afternoon in Cornell CIS lounge.  ARGM-LOC
--> Output 5:  <𝑠> Cornell CIS lounge  </𝑠>
+- Input 1: wrote [SEPT] I wrote this slide this afternoon in Cornell CIS lounge. ARG0
+- Output 1:  <𝑠>  I  </𝑠> 
+- Input 2: wrote [SEPT] I wrote this slide this afternoon in Cornell CIS lounge. ARG1
+- Output 2:  <𝑠>  this slide  </𝑠>
+- Input 3: wrote [SEPT] I wrote this slide this afternoon in Cornell CIS lounge. ARG2
+- Output 3:  <𝑠>   </𝑠>  (Explanation: because there's no ARG2 in this sentence)
+- Input 4: wrote [SEPT] I wrote this slide this afternoon in Cornell CIS lounge. ARGM-TMP
+- Output 4:  <𝑠> this afternoon  </𝑠> 
+- Input 5: wrote [SEPT] I wrote this slide this afternoon in Cornell CIS lounge.  ARGM-LOC
+- Output 5:  <𝑠> Cornell CIS lounge  </𝑠>
