@@ -55,6 +55,7 @@ In the Named Entity Recognition (NER) task, I treated it as a sequence-tagging t
 
 In such a closed vocabulary system the test set can only contain words from this known lexicon. One way to create an open vocabulary system is to model these potential unknown words in the test set by adding a pseudo-word called <UNK>. For example we can replace by <UNK> all words that occur fewer than n times in the training set, where n is some small number.
 
+
 ## Contextual Word Embeddings
 
 pre-trained GloVe embeddings:
@@ -62,3 +63,7 @@ pre-trained GloVe embeddings:
 leveraging the entire corpus
 - is trained using matrix factorization techniques on word-context
 matrix
+
+## Attention-based Encoder Decoder
+
+Intuition: When labeling a sentence, we pay special attention to the word or phrase that we are labeling as well as other phrase worth an attention (e.g. predicate).
