@@ -55,7 +55,6 @@ In the Named Entity Recognition (NER) task, I treated it as a sequence-tagging t
 
 In such a closed vocabulary system the test set can only contain words from this known lexicon. One way to create an open vocabulary system is to model these potential unknown words in the test set by adding a pseudo-word called <UNK>. For example we can replace by <UNK> all words that occur fewer than n times in the training set, where n is some small number.
 
-
 ## Contextual Word Embeddings
 
 pre-trained GloVe embeddings:
@@ -69,3 +68,17 @@ matrix
 <img width="939" alt="image" src="https://user-images.githubusercontent.com/73151841/223310456-f3c85168-c008-4882-ae66-e7a73735481f.png">
 
 Intuition: When labeling a sentence, we pay special attention to the word or phrase that we are labeling as well as other phrase worth an attention (e.g. predicate).
+
+## Bidirectional LSTM Encoder
+
+<img width="577" alt="image" src="https://user-images.githubusercontent.com/73151841/223310659-21d07add-d06a-4ea4-b2fe-24c18c915829.png">
+
+Using bidirectional will run your inputs in two ways, one from past to future and one from future to past and what differs this approach from unidirectional is that in the LSTM that runs backwards you preserve information from the future and using the two hidden states combined you are able in any point in time to preserve information from both past and future.
+
+## Attention Context Vector
+
+<img width="769" alt="image" src="https://user-images.githubusercontent.com/73151841/223310780-82b805b2-0510-4fd5-9450-88f716c6c16d.png">
+
+- Dynamically derive a context vector, c, from encoder hidden states at each step, i, during decoding; refer to each as ci
+- Take all of the encoder hidden states into account
+- Condition the computation of the current decoder state on ci (and prior hidden state and previous output)
