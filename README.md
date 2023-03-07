@@ -8,3 +8,12 @@ In natural language processing, semantic role labeling (SRL) is the process that
 Who did what to whom at when at where?
 [Agent] [Predicate] [Patient] [Time] [Location]
 I wrote this slide this afternoon in Cornell CIS lounge.
+
+## Why SRL? Semantic Understanding!
+
+Performing SRL Task = Semantic Understanding
+Semantic understanding is cornerstone of:
+- machine translation
+- information extraction
+- text summarization
+- question answering
