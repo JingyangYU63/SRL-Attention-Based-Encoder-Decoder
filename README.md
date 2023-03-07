@@ -65,7 +65,7 @@ matrix
 
 ## Attention-based Encoder Decoder
 
-<img width="939" alt="image" src="https://user-images.githubusercontent.com/73151841/223310456-f3c85168-c008-4882-ae66-e7a73735481f.png">
+<img width="937" alt="image" src="https://user-images.githubusercontent.com/73151841/223310936-2a64b6d6-9bcf-48e7-a390-cfc74e47f949.png">
 
 Intuition: When labeling a sentence, we pay special attention to the word or phrase that we are labeling as well as other phrase worth an attention (e.g. predicate).
 
@@ -82,3 +82,39 @@ Using bidirectional will run your inputs in two ways, one from past to future an
 - Dynamically derive a context vector, c, from encoder hidden states at each step, i, during decoding; refer to each as ci
 - Take all of the encoder hidden states into account
 - Condition the computation of the current decoder state on ci (and prior hidden state and previous output)
+
+## BFS✗  Beam Search✓
+
+- View decoding as heuristic state-space search
+- Beam search allows this while controlling the exponential growth of the search space
+- Happens only in predicting process!!
+
+We cares about the overall probability of the whole sequence instead of probability of a single label. But it’s very expensive to traverse (i.e. BFS is costly) through all possible combination of the labels, so we set a fixed width to limit the exponential growth.
+
+Beam Search Illustration:
+<img width="489" alt="image" src="https://user-images.githubusercontent.com/73151841/223311220-384e14b9-7a61-40bd-88ec-05a511edf4d8.png">
+
+## Bayesian Optimization: good news for continuous hyperparameters!
+
+Hyperparameter set:
+- Learning rate
+- Momentum  coefficient
+- Epsilon term (for numerical stability)
+- Weight decay (L2 penalty)
+
+Unlike the grid search and random search, it’s an informed search method, meaning that it learns from previous iterations. 
+
+## Model-level Parallelism - Teacher Forcing
+
+Teacher forcing in the decoder, i.e., force the system to use the gold target token from training as the next input x_t+1
+
+Benefit: Decoder computes the embedding layer with parallelism, speeding up training
+
+<img width="444" alt="image" src="https://user-images.githubusercontent.com/73151841/223311619-1d16a78d-a1c8-425f-9bac-66d5be34f8c6.png">
+
+## Optimization-level Parallelism
+
+- Break down the work of computing batch gradient evenly to multiple threads!
+- Instead of using PyTorch’s built-in optimizer (e.g.  torch.optim.Adam), write my own backprop system!
+
+Check out my own backprop system demo here: https://github.com/JingyangYU63/ml-web-app/blob/main/neural_network.ipynb
