@@ -44,3 +44,13 @@ E.g., “I wrote this slide this afternoon in Cornell CIS lounge”
 - Output 4:  <𝑠> this afternoon  </𝑠> 
 - Input 5: wrote [SEPT] I wrote this slide this afternoon in Cornell CIS lounge.  ARGM-LOC
 - Output 5:  <𝑠> Cornell CIS lounge  </𝑠>
+
+In the Named Entity Recognition (NER) task, I treated it as a sequence-tagging task. I tried to tag the sentence word by word, using special token to mark the start and end of a named entity tag. But it turned out that some of the named entity tags start without a start token or end without an end token, which could be trouble-shooting to distinguish the boundary between two independent but consecutive entities that shared the same tag.
+
+## Data Preprocessing
+
+- Handling unknown words: replaces words in the training data by <UNK> based on their frequency
+- Add paddings to maintain fixed length for each sentence
+- Divide original dataset into training/ validation / test sets
+
+In such a closed vocabulary system the test set can only contain words from this known lexicon. One way to create an open vocabulary system is to model these potential unknown words in the test set by adding a pseudo-word called <UNK>. For example we can replace by <UNK> all words that occur fewer than n times in the training set, where n is some small number.
